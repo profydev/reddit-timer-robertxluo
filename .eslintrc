@@ -5,9 +5,12 @@
     "es6": true,
     "cypress/globals": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "extends": ["airbnb"],
-  "plugins": ["cypress", "react-hooks"],
+  "plugins": ["cypress", "react-hooks", "@babel/plugin-syntax-jsx"],
   "rules": {
     "cypress/no-assigning-return-values": "error",
     "cypress/no-unnecessary-waiting": "error",
@@ -16,5 +19,10 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error"
+  },
+  "settings": {
+    "import/parsers": {
+      "espree": [".js", ".jsx"]
+    }
   }
 }
